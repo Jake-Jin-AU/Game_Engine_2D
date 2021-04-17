@@ -1,4 +1,5 @@
 # Game_Engine_2D
+---
 ### Overview
 This project is for basic game engine development algorithm
 
@@ -46,23 +47,23 @@ When a player collides a negative obstacle or enemy
 - Inspirations:\
 This game was inspired by my friends, spiders who live in my car, especially in the side mirrors.
 
-#### About developer
+---
+### About developer
 - Name: Jake Jin
 - Email: jake.jin.au@gmail.com
 
-
+---
 ### Updates
-title: first commit with sources\
 date: 17/04/2021\
+title: first commit with sources\
 description:
 
----
-title: Git repository initialised for the game_engine_2D\
 date: 17/04/2021\
+title: Git repository initialised for the game_engine_2D\
 description:
 
 ---
 FORMAT\
-title:\
 date:\
+title:\
 description:

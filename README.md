@@ -41,6 +41,7 @@ You can shoot your cobweb to climb to destinations.
   - enemies (with auto moving)
 - Mechanics:
   - basic physics (gravity, single pendulum, ...)
+  - Environmental effects (weather - wind, rain, ...)
 - Win condition:\
 When a player survives and arrives at the destination
 - Lose condition:\

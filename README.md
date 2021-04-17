@@ -29,7 +29,7 @@ This game engine consists of several main features below
 #### 3. On-board game
 This engine includes a part of game source to simulate specific engine functions.
 
-- Game name: Fly, Splider!
+- Game name: Fly, Spider!
 - Description:\
 You play as a spider who has to survive in the wild such as forests or simetimes cities.\
 You can shoot your cobweb to climb to destinations.

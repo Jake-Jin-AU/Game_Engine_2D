@@ -59,7 +59,7 @@ date: 17/04/2021
 | - Study C++17 | | 18/04/2021 | 100 |
 | - Study Win32 | | 18/04/2021 | 70 |
 | - Study Git | | 18/04/2021 | 100 |
-| - Design game engine | | 18/04/2021 | 100 |
+| - Design game engine with UML Class Diagram | | 18/04/2021 | 800 |
 | - Build initial game engine | | 18/04/2021 | 80 |
 | Development - Objects |
 | - Get game resources | 19/04/2021 | 20/04/2021 | |

@@ -39,7 +39,7 @@ You can shoot your cobweb to climb to destinations.
   - Map tile
   - Obstacles (like rigidbody in unity)
   - Enemies (with auto moving)
-- Mechanics:
+- Mechanisms:
   - Basic physics (gravity, single pendulum, ...)
   - Environmental effects (weather - wind, rain, ...)
 - Win condition:\

@@ -49,10 +49,9 @@ When a player collides a negative obstacle or enemy
 
 - Inspirations:\
 This game was inspired by my friends, spiders who live in my car, especially in the side mirrors.
-#### 4. UML Class Diagram
+#### 4. UML Class Diagram (updated: 17/04/2021)
 
-#### 5. Milestone
-date: 17/04/2021
+#### 5. Milestone (updated: 17/04/2021)
 | Task | Start | End | Progress(%) |
 | --- | --- | --- | :---: |
 | Preparation |

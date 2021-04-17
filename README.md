@@ -36,11 +36,11 @@ This engine includes a part of game source to simulate specific engine functions
 You play as a spider who has to survive in the wild such as forests or simetimes cities.\
 You can shoot your cobweb to climb to destinations.
 - Objects:
-  - map tile
-  - obstacles (like rigidbody in unity)
-  - enemies (with auto moving)
+  - Map tile
+  - Obstacles (like rigidbody in unity)
+  - Enemies (with auto moving)
 - Mechanics:
-  - basic physics (gravity, single pendulum, ...)
+  - Basic physics (gravity, single pendulum, ...)
   - Environmental effects (weather - wind, rain, ...)
 - Win condition:\
 When a player survives and arrives at the destination

@@ -49,6 +49,31 @@ When a player collides a negative obstacle or enemy
 
 - Inspirations:\
 This game was inspired by my friends, spiders who live in my car, especially in the side mirrors.
+#### 4. UML Class Diagram
+
+#### 5. Milestone
+date: 17/04/2021
+| Task | Start | End | Progress(%) |
+| --- | --- | --- | :---: |
+| Preparation |
+| - Study C++17 | | 18/04/2021 | 100 |
+| - Study Win32 | | 18/04/2021 | 70 |
+| - Study Git | | 18/04/2021 | 100 |
+| - Design game engine | | 18/04/2021 | 100 |
+| - Build initial game engine | | 18/04/2021 | 80 |
+| Development - Objects |
+| - Get game resources | 19/04/2021 | 20/04/2021 | |
+| - Design game maps | 20/04/2021 | 20/04/2021 | |
+| - Construct game maps | 21/04/2021 | 21/04/2021 | |
+| - Construct game objects | 22/04/2021 | 22/04/2022 | |
+| - Deploy game objects | 23/04/2021 | 23/04/2021 | |
+| Development - Physics |
+| - Develop physical movement - gravity | 24/04/2021 | 24/04/2021 | |
+| - Develop physical movement - single pendulum | 24/04/2021 | 25/04/2021 | |
+| Development - Animation |
+| - Animate framed textures | 24/04/2021 | 25/04/2021 | |
+| - Animate textures using physics | 24/04/2021 | 25/04/2021 | |
+| Test & Update | 26/04/2021 | | |
 
 ---
 ### About developer

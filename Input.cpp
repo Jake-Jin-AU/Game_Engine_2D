@@ -13,6 +13,7 @@ void Input::load_input()
 {
 	_button_state[Button::DIALOG_CONFIGURATION] = Button_State::UP;
 	_button_state[Button::DISPLAY_GAME_OBJECTS_ID] = Button_State::UP;
+	_button_state[Button::DISPLAY_GAME_OBJECTS_POSITION] = Button_State::UP;
 	_button_state[Button::DISPLAY_COLLIDERS] = Button_State::UP;
 	
 	for (auto button_state : _button_state)
@@ -54,6 +55,10 @@ void Input::load_input()
 			else if (event.syswm.msg->msg.win.wParam == ID_GAMEOBJECTS_TOGGLEDISPLAYCOLLIDER)
 			{
 				_button_state[Button::DISPLAY_COLLIDERS] = Button_State::PRESSED;
+			}
+			else if (event.syswm.msg->msg.win.wParam == ID_GAMEOBJECTS_TOGGLEDISPLAYPOSITION)
+			{
+				_button_state[Button::DISPLAY_GAME_OBJECTS_POSITION] = Button_State::PRESSED;
 			}
 			break;
 

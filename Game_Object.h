@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <string>
 
 #define SDL_MAIN_HANDLED
 #include <SDL.h>
@@ -33,6 +34,9 @@ public:
 
 	// Get
 	const std::string& get_id() const;
+	const int& get_width() const;
+	const int& get_height() const;
+	
 	const float& get_scale() const;
 	const Vector_2D& get_translation() const;
 	const Circle_2D& get_collider() const;
@@ -43,7 +47,7 @@ public:
 	//
 	virtual void simulate_AI(const Uint32& milliseconds_to_simulate, Assets* assets, Input* input) = 0;
 	virtual void simulate_physics(const Uint32& milliseconds_to_simulate, Assets* assets, Scene* scene);
-	virtual void render(const Uint32& milliseconds_to_simulate, Assets* assets, SDL_Renderer* renderer);
+	virtual void render(const Uint32& milliseconds_to_simulate, Assets* assets, SDL_Renderer* renderer, Scene* scene);
 
 protected:
 	std::string _id;

@@ -2,7 +2,13 @@
 #include "Game_Object.h"
 
 Scene::Scene(const std::string& id)
+	: _global_translation(0.f, 0.f)
 {
+	// Temporary values
+	_global_coordinate_width	= 2000;
+	_global_coordinate_height	= 2000;
+	
+	//
 	_id = id;
 }
 
@@ -36,4 +42,19 @@ std::vector<Game_Object*> Scene::get_game_objects()
 const std::string& Scene::get_id() const
 {
 	return _id;
+}
+
+const Vector_2D& Scene::get_global_translation()
+{
+	return _global_translation;
+}
+
+Camera* Scene::get_camera() const
+{
+	return _camera;
+}
+
+void Scene::set_global_translation(const Vector_2D& global_translation)
+{
+	_global_translation = global_translation;
 }

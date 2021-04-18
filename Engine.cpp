@@ -117,7 +117,7 @@ void Engine::render(const Uint32& milliseconds_to_simulate, Assets* assets, Scen
     std::vector<Game_Object*> game_objects = scene->get_game_objects();
     for (Game_Object* game_object : game_objects)
     {
-        game_object->render(milliseconds_to_simulate, assets, _renderer);
+        game_object->render(milliseconds_to_simulate, assets, _renderer, scene);
     }
 
     // Present a render

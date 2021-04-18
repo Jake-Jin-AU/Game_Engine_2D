@@ -152,6 +152,7 @@
     <ClCompile Include="Animated_Texture.cpp" />
     <ClCompile Include="Asset.cpp" />
     <ClCompile Include="Assets.cpp" />
+    <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Sound.cpp" />
     <ClCompile Include="Circle_2D.cpp" />
     <ClCompile Include="Collider.cpp" />
@@ -176,6 +177,7 @@
     <ClInclude Include="Animated_Texture.h" />
     <ClInclude Include="Asset.h" />
     <ClInclude Include="Assets.h" />
+    <ClInclude Include="Camera.h" />
     <ClInclude Include="Sound.h" />
     <ClInclude Include="Circle_2D.h" />
     <ClInclude Include="Collider.h" />

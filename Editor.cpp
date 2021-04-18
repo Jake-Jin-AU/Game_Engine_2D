@@ -116,6 +116,11 @@ void Editor::update(Input* input, Scene*)
 		Configuration::getInstance()->_should_display_ids = !Configuration::getInstance()->_should_display_ids;
 	}
 
+	if (input->is_button_state(Input::Button::DISPLAY_GAME_OBJECTS_POSITION, Input::Button_State::PRESSED))
+	{
+		Configuration::getInstance()->_should_display_positions = !Configuration::getInstance()->_should_display_positions;
+	}
+
 	if (input->is_button_state(Input::Button::DISPLAY_COLLIDERS, Input::Button_State::PRESSED))
 	{
 		Configuration::getInstance()->_should_display_colliders = !Configuration::getInstance()->_should_display_colliders;

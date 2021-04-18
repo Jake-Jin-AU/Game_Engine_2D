@@ -69,6 +69,7 @@ BEGIN
     POPUP "Game Objects"
     BEGIN
         MENUITEM "Toggle display ID",           ID_GAMEOBJECTS_TOGGLEDISPLAYID
+        MENUITEM "Toggle display position",     ID_GAMEOBJECTS_TOGGLEDISPLAYPOSITION
         MENUITEM "Toggle display collider",     ID_GAMEOBJECTS_TOGGLEDISPLAYCOLLIDER
     END
     POPUP "Settings"

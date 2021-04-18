@@ -14,7 +14,7 @@ public:
 
 	// Inherited via Game_Object
 	virtual void simulate_AI(const Uint32& milliseconds_to_simulate, Assets* assets, Input* input) override;
-	virtual void render(const Uint32&, Assets* assets, SDL_Renderer* renderer) override;
+	virtual void render(const Uint32&, Assets* assets, SDL_Renderer* renderer, Scene* scene) override;
 
 	const float& get_speed() const;
 	void set_speed(const float& speed);

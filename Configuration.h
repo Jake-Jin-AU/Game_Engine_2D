@@ -30,8 +30,9 @@ public:
 	void set_refresh_rate(const Uint8& refresh_rate);
 
 	// Options
-	bool _should_display_ids = false;
-	bool _should_display_colliders = false;
+	bool _should_display_ids			= false;
+	bool _should_display_positions		= false;
+	bool _should_display_colliders		= false;
 
 private:
 	Configuration();

@@ -4,7 +4,7 @@ Player::Player(const std::string& id)
 	: Game_Object(id, "Texture.Player.Idle", Layer::LAYER_3)
 {
 	// Transform
-	_translation	= Vector_2D(350.f, 350.f);
+	_translation	= Vector_2D(50.f, 1950.f);
 	_speed			= 0.1f;
 
 	// Collider
@@ -81,12 +81,12 @@ void Player::simulate_AI(const Uint32&, Assets* assets, Input* input)
 	_velocity.set_scale(_speed);
 }
 
-void Player::render(const Uint32& milliseconds_to_simulate, Assets* assets, SDL_Renderer* renderer)
+void Player::render(const Uint32& milliseconds_to_simulate, Assets* assets, SDL_Renderer* renderer, Scene* scene)
 {
 	Animated_Texture* texture = (Animated_Texture*)assets->get_asset(_texture_id);
 	texture->update_frame(milliseconds_to_simulate);
 
-	Game_Object::render(milliseconds_to_simulate, assets, renderer);
+	Game_Object::render(milliseconds_to_simulate, assets, renderer, scene);
 }
 
 const float& Player::get_speed() const

@@ -6,7 +6,7 @@
 #define SDL_MAIN_HANDLED
 #include <SDL.h>
 
-#include "Game_Object.h"
+class Game_Object;
 
 class Scene
 {
@@ -16,8 +16,8 @@ public:
 
 	virtual void update(SDL_Window* window) = 0;
 
-	const Game_Object* get_game_object(const std::string& id);
-	const std::vector<Game_Object*> get_game_objects() const;
+	Game_Object* get_game_object(const std::string& id);
+	std::vector<Game_Object*> get_game_objects();
 
 	const std::string& get_id() const;
 

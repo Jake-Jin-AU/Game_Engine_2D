@@ -5,14 +5,18 @@
 #define SDL_MAIN_HANDLED
 #include <SDL.h>
 
+// Static class by singleton pattern
 class Configuration
 {
 public:
 	static Configuration* getInstance();
 
+	// Assert
 	void assertEX(const int& result, const int& success, const char* error_msg) const;
 	void assertEX(const void* result, const char* error_msg) const;
 	void assertEX(const void* result, const char* error_msg, const char* param) const;
+
+	// Get
 	const std::string& get_window_name();
 	const std::string& get_title() const;
 	const std::string& get_version() const;
@@ -22,7 +26,12 @@ public:
 	const int& get_resolution_height() const;
 	const Uint8& get_refresh_rate() const;
 
+	// Set
 	void set_refresh_rate(const Uint8& refresh_rate);
+
+	// Options
+	bool _should_display_ids = false;
+	bool _should_display_colliders = false;
 
 private:
 	Configuration();

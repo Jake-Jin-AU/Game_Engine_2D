@@ -9,8 +9,12 @@ Input::~Input()
 {
 }
 
-void Input::load()
+void Input::load_input()
 {
+	_button_state[Button::DIALOG_CONFIGURATION] = Button_State::UP;
+	_button_state[Button::DISPLAY_GAME_OBJECTS_ID] = Button_State::UP;
+	_button_state[Button::DISPLAY_COLLIDERS] = Button_State::UP;
+	
 	for (auto button_state : _button_state)
 	{
 		if (button_state.second == Button_State::PRESSED)
@@ -39,7 +43,21 @@ void Input::load()
 			{
 				_button_state[Button::QUIT] = Button_State::PRESSED;
 			}
+			else if (event.syswm.msg->msg.win.wParam == ID_SETTINGS_CONFIGURATION)
+			{
+				_button_state[Button::DIALOG_CONFIGURATION] = Button_State::PRESSED;
+			}
+			else if (event.syswm.msg->msg.win.wParam == ID_GAMEOBJECTS_TOGGLEDISPLAYID)
+			{
+				_button_state[Button::DISPLAY_GAME_OBJECTS_ID] = Button_State::PRESSED;
+			}
+			else if (event.syswm.msg->msg.win.wParam == ID_GAMEOBJECTS_TOGGLEDISPLAYCOLLIDER)
+			{
+				_button_state[Button::DISPLAY_COLLIDERS] = Button_State::PRESSED;
+			}
 			break;
+
+		// Key events
 		case SDL_KEYDOWN:
 			switch (event.key.keysym.scancode)
 			{
@@ -70,6 +88,13 @@ void Input::load()
 					_button_state[Button::RIGHT] = Button_State::PRESSED;
 				}
 				break;
+
+			case SDL_SCANCODE_LSHIFT:
+				if (!is_button_state(Button::RUNNING, Button_State::DOWN))
+				{
+					_button_state[Button::RUNNING] = Button_State::PRESSED;
+				}
+				break;
 			}
 			break;
 
@@ -90,6 +115,10 @@ void Input::load()
 
 			case SDL_SCANCODE_D:
 				_button_state[Button::RIGHT] = Button_State::RELEASED;
+				break;
+
+			case SDL_SCANCODE_LSHIFT:
+				_button_state[Button::RUNNING] = Button_State::RELEASED;
 				break;
 			}
 			break;

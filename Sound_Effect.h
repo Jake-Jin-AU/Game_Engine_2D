@@ -1,7 +1,7 @@
 #pragma once
-#include "Audio.h"
+#include "Sound.h"
 
-class Sound_Effect : public Audio
+class Sound_Effect : public Sound
 {
 };
 

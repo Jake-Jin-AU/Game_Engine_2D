@@ -1,7 +1,7 @@
 #pragma once
-#include "Audio.h"
+#include "Sound.h"
 
-class Music : public Audio
+class Music : public Sound
 {
 };
 

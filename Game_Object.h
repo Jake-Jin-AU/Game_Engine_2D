@@ -7,8 +7,9 @@
 #include "Assets.h"
 #include "Input.h"
 #include "Vector_2D.h"
-
-class Collider;
+#include "Text.h"
+#include "Circle_2D.h"
+#include "Scene.h"
 
 enum class Layer
 {
@@ -30,14 +31,19 @@ public:
 	Game_Object(const std::string& id, const std::string& texture_id, const Layer layer);
 	~Game_Object();
 
+	// Get
 	const std::string& get_id() const;
 	const float& get_scale() const;
+	const Vector_2D& get_translation() const;
+	const Circle_2D& get_collider() const;
 
+	// Set
 	void set_scale(const float& scalar);
 
+	//
 	virtual void simulate_AI(const Uint32& milliseconds_to_simulate, Assets* assets, Input* input) = 0;
-	virtual void simulate_physics(const Uint32& milliseconds_to_simulate, Assets* assets);
-	virtual void render(const Uint32& milliseconds_to_simulate, Assets* assets, SDL_Renderer* renderer) const;
+	virtual void simulate_physics(const Uint32& milliseconds_to_simulate, Assets* assets, Scene* scene);
+	virtual void render(const Uint32& milliseconds_to_simulate, Assets* assets, SDL_Renderer* renderer);
 
 protected:
 	std::string _id;
@@ -50,6 +56,7 @@ protected:
 	Collier* collier;*/
 	Vector_2D _translation;
 	Vector_2D _velocity;
+	Circle_2D _collider;
 
 	int		_width;
 	int		_height;
@@ -58,6 +65,5 @@ protected:
 	SDL_RendererFlip _flip;
 
 private:
-
 };
 

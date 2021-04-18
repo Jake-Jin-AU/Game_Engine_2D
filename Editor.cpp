@@ -42,6 +42,44 @@ Editor::~Editor()
 {
 }
 
-void Editor::update(Input*, Scene*)
+INT_PTR CALLBACK Dialog_Configuration_Proc(HWND hWnd, UINT message, WPARAM wParam, LPARAM)
 {
+	switch (message)
+	{
+	case WM_INITDIALOG:
+		return true;
+		
+	case WM_COMMAND:
+		switch (LOWORD(wParam))
+		{
+		// controls message
+		case IDOK:
+			EndDialog(hWnd, IDOK);
+			break;
+		}
+		break;
+
+	default:
+		return false;
+	}
+
+	return true;
+}
+
+void Editor::update(Input* input, Scene*)
+{
+	if (input->is_button_state(Input::Button::DIALOG_CONFIGURATION, Input::Button_State::PRESSED))
+	{
+		DialogBox(GetModuleHandle(0), MAKEINTRESOURCE(IDD_DIALOG_CONFIGURATION), _window, Dialog_Configuration_Proc);
+	}
+
+	if (input->is_button_state(Input::Button::DISPLAY_GAME_OBJECTS_ID, Input::Button_State::PRESSED))
+	{
+		Configuration::getInstance()->_should_display_ids = !Configuration::getInstance()->_should_display_ids;
+	}
+
+	if (input->is_button_state(Input::Button::DISPLAY_COLLIDERS, Input::Button_State::PRESSED))
+	{
+		Configuration::getInstance()->_should_display_colliders = !Configuration::getInstance()->_should_display_colliders;
+	}
 }

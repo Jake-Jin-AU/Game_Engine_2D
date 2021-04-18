@@ -10,7 +10,7 @@ Scene::~Scene()
 {
 }
 
-const Game_Object* Scene::get_game_object(const std::string& id)
+Game_Object* Scene::get_game_object(const std::string& id)
 {
 	if (_game_objects.find(id) == _game_objects.end())
 	{
@@ -21,7 +21,7 @@ const Game_Object* Scene::get_game_object(const std::string& id)
 	return _game_objects[id];
 }
 
-const std::vector<Game_Object*> Scene::get_game_objects() const
+std::vector<Game_Object*> Scene::get_game_objects()
 {
 	std::vector<Game_Object*> game_objects;
 

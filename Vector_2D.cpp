@@ -54,8 +54,13 @@ void Vector_2D::normalise()
     }
 }
 
-void Vector_2D::scale(const float& scalar)
+void Vector_2D::set_scale(const float& scalar)
 {
     _x *= scalar;
     _y *= scalar;
+}
+
+float Vector_2D::calculate_angle() const
+{
+    return -atan2f(_y, _x);
 }

@@ -33,6 +33,30 @@ Engine::Engine()
         IMG_INIT_PNG,
         "Initialise SDL image");
 
+    // Initialise SDL_TTF
+    Configuration::getInstance()->assertEX(TTF_Init(), 0, "Initialise SDL TTF");
+
+    // Initialise Mixer
+    const int mixer_init_result = Mix_Init(MIX_INIT_MOD);
+    const int mixer_init_failure = 0;
+    if (mixer_init_result == mixer_init_failure)
+    {
+        std::cout << "Failed to initialize SDL Mixer" << std::endl;
+        std::cout << "SDL Error: " << SDL_GetError() << std::endl;
+        std::cout << "Mixer Error: " << Mix_GetError() << std::endl;
+        exit(1);
+    }
+
+    const int mixer_open_audio_result = Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 1024);
+    const int mixer_open_audio_success = 0;
+    if (mixer_open_audio_result != mixer_open_audio_success)
+    {
+        std::cout << "Failed to open audio" << std::endl;
+        std::cout << "SDL Error: " << SDL_GetError() << std::endl;
+        exit(1);
+    }
+
+    Mix_AllocateChannels(3);
 }
 
 Engine::~Engine()
@@ -70,7 +94,7 @@ void Engine::simulate_physics(const Uint32& milliseconds_to_simulate, Assets* as
     std::vector<Game_Object*> game_objects = scene->get_game_objects();
     for (Game_Object* game_object : game_objects)
     {
-        game_object->simulate_physics(milliseconds_to_simulate, assets);
+        game_object->simulate_physics(milliseconds_to_simulate, assets, scene);
     }
 }
 

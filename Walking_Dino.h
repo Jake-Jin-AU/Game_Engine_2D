@@ -9,7 +9,7 @@ public:
 
 	// Inherited via Game_Object
 	virtual void simulate_AI(const Uint32& milliseconds_to_simulate, Assets* assets, Input* input) override;
-	virtual void render(const Uint32& milliseconds_to_simulate, Assets* assets, SDL_Renderer* renderer) const override;
+	virtual void render(const Uint32& milliseconds_to_simulate, Assets* assets, SDL_Renderer* renderer) override;
 
 private:
 	

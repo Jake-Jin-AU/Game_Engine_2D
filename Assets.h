@@ -5,6 +5,7 @@
 #include "Texture.h"
 #include "Animated_Texture.h"
 #include "Asset.h"
+#include "Sound.h"
 
 class Assets
 {

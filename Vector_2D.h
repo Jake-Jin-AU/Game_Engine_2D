@@ -17,7 +17,8 @@ public:
 
 	float calculate_magnitude() const;
 	void normalise();
-	void scale(const float& scalar);
+	void set_scale(const float& scalar);
+	float calculate_angle() const;
 
 private:
 	float _x;

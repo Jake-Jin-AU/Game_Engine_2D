@@ -14,12 +14,21 @@ public:
 
 	enum class Button
 	{
+		// Window
 		QUIT,
+		DIALOG_CONFIGURATION,
+		DISPLAY_GAME_OBJECTS_ID,
+		DISPLAY_COLLIDERS,
 
+
+		// Key
 		UP,
 		DOWN,
 		LEFT,
-		RIGHT
+		RIGHT,
+
+		// Action
+		RUNNING
 	};
 
 	enum class Button_State
@@ -30,7 +39,7 @@ public:
 		UP
 	};
 
-	void load();
+	void load_input();
 	bool is_button_state(const Button& type, const Button_State& state) const;
 
 private:

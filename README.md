@@ -3,7 +3,7 @@
 ### Overview
 This project is for basic game engine development algorithm.
 - Engine name: Lear Engine
-- Version: 1.0.0a (updated on 17/04/2021)
+- Version: 1.0.0a (updated on 18/04/2021)
 
 #### 1. Engine system
 This game engine consists of several main features below
@@ -52,15 +52,15 @@ This game was inspired by my friends, spiders who live in my car, especially in 
 #### 4. UML Class Diagram (updated on 17/04/2021)
 ![UML Class Diagram](https://github.com/Jake-Jin-AU/Game_Engine_2D/blob/main/Documents/class_diagram.jpg)
 
-#### 5. Milestone (updated on 17/04/2021)
+#### 5. Milestone (updated on 18/04/2021)
 | Task | Start | End | Progress(%) |
 | --- | --- | --- | :---: |
 | Preparation |
 | - Study C++17 | | 18/04/2021 | 100 |
-| - Study Win32 | | 18/04/2021 | 70 |
+| - Study Win32 | | 18/04/2021 | 50 |
 | - Study Git | | 18/04/2021 | 100 |
-| - Design game engine with UML Class Diagram | | 18/04/2021 | 80 |
-| - Build initial game engine | | 18/04/2021 | 80 |
+| - Design game engine with UML Class Diagram | | 18/04/2021 | 90 |
+| - Build initial game engine | | 18/04/2021 | 90 |
 | Development - Objects |
 | - Collect game resources | 19/04/2021 | 20/04/2021 | |
 | - Design game maps | 20/04/2021 | 20/04/2021 | |
@@ -82,6 +82,11 @@ This game was inspired by my friends, spiders who live in my car, especially in 
 
 ---
 ### Updates
+date: 18/04/2021\
+version: 1.0.0a\
+title: initial engine updated\
+description:
+
 date: 17/04/2021\
 version: 1.0.0a\
 title: first commit with sources\

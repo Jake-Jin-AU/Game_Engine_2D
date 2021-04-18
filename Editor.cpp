@@ -47,17 +47,55 @@ INT_PTR CALLBACK Dialog_Configuration_Proc(HWND hWnd, UINT message, WPARAM wPara
 	switch (message)
 	{
 	case WM_INITDIALOG:
+	{
+		//int length = ::GetDlgItemTextA(hWnd, IDC_EDIT_TITLE, const_cast<char*>(tmp.c_str()), 255);
+		
+		// Update dialog items
+		{
+			std::string tmp = Configuration::getInstance()->get_title();
+			::SetDlgItemTextA(hWnd, IDC_EDIT_TITLE, tmp.c_str());
+		}
+		{
+			std::string tmp = Configuration::getInstance()->get_version();
+			::SetDlgItemTextA(hWnd, IDC_EDIT_VERSION, tmp.c_str());
+		}
+		{
+			std::string tmp = std::to_string(Configuration::getInstance()->get_window_position_x());
+			::SetDlgItemTextA(hWnd, IDC_EDIT_WIN_POS_X, tmp.c_str());
+		}
+		{
+			std::string tmp = std::to_string(Configuration::getInstance()->get_window_position_y());
+			::SetDlgItemTextA(hWnd, IDC_EDIT_WIN_POS_Y, tmp.c_str());
+		}
+		{
+			std::string tmp = std::to_string(Configuration::getInstance()->get_resolution_width());
+			::SetDlgItemTextA(hWnd, IDC_EDIT_RESOLUTION_W, tmp.c_str());
+		}
+		{
+			std::string tmp = std::to_string(Configuration::getInstance()->get_resolution_height());
+			::SetDlgItemTextA(hWnd, IDC_EDIT_RESOLUTION_H, tmp.c_str());
+		}
+		{
+			std::string tmp = std::to_string(Configuration::getInstance()->get_refresh_rate());
+			::SetDlgItemTextA(hWnd, IDC_EDIT_REFRESH_RATE, tmp.c_str());
+		}
+
 		return true;
+	}
+		
 		
 	case WM_COMMAND:
+	{
 		switch (LOWORD(wParam))
 		{
-		// controls message
+			// controls message
 		case IDOK:
 			EndDialog(hWnd, IDOK);
 			break;
 		}
 		break;
+	}
+		
 
 	default:
 		return false;

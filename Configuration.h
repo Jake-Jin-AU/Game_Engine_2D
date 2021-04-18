@@ -24,7 +24,7 @@ public:
 	const int& get_window_position_y() const;
 	const int& get_resolution_width() const;
 	const int& get_resolution_height() const;
-	const Uint8& get_refresh_rate() const;
+	const int& get_refresh_rate() const;
 
 	// Set
 	void set_refresh_rate(const Uint8& refresh_rate);
@@ -46,6 +46,6 @@ private:
 	int					_window_position_y;
 	int					_resolution_width;
 	int					_resolution_height;
-	Uint8				_refresh_rate;
+	int					_refresh_rate;
 };
 

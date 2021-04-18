@@ -4,33 +4,71 @@ Configuration* Configuration::_instance = nullptr;
 
 Configuration::Configuration()
 {
+    // default
+    _title = "Fly_Spider";
+    _version = "1.0.0a";
+    _window_position_x = 100;
+    _window_position_y = 100;
+    _resolution_width = 800;
+    _resolution_height = 600;
+    _refresh_rate = 60;
+
     // Read configuration file
-    /*std::ifstream file;
+    std::ifstream file;
     file.open("./x64/debug/Configuration.cfg");
     std::string w;
     std::string game_title;
     while (!file.eof())
     {
         file >> w;
-        if (w == "[title]")
+        if (w.empty())
+        {
+            continue;
+        }
+        else if (w == "[title]")
         {
             file >> w;
-            for (auto i = 1; i <= sizeof(w); i++)
-            {
-                game_title += w.at(w.find('=') + i);
-            }
-
+            if (!w.empty())
+                _title = w;
+        }
+        else if (w == "[version]")
+        {
+            file >> w;
+            if (!w.empty())
+                _version = w;
+        }
+        else if (w == "[window]")
+        {
+            file >> w;
+            if (!w.empty())
+                _window_position_x = atoi(w.c_str());
+            file >> w;
+            if (!w.empty())
+                _window_position_y = atoi(w.c_str());
+        }
+        else if (w == "[resolution]")
+        {
+            file >> w;
+            if (!w.empty())
+                _resolution_width = atoi(w.c_str());
+            file >> w;
+            if (!w.empty())
+                _resolution_height = atoi(w.c_str());
+        }
+        else if (w == "[refresh]")
+        {
+            file >> w;
+            if (!w.empty())
+                _refresh_rate = atoi(w.c_str());
+        }
+        else if (w == "[end]")
+        {
+            break;
         }
     }
-    file.close();*/
+    file.close();
     
-    _title              = "Fly Spider";
-    _version            = "1.0.0a";
-    _window_position_x  = 100;
-    _window_position_y = 100;
-    _resolution_width   = 800;
-    _resolution_height  = 600;
-    _refresh_rate       = 60;
+    
     // Validate configuration file
 
 }
@@ -115,7 +153,7 @@ const int& Configuration::get_resolution_width() const
     return _resolution_height;
 }
 
- const Uint8& Configuration::get_refresh_rate() const
+ const int& Configuration::get_refresh_rate() const
  {
      return _refresh_rate;
  }

@@ -27,7 +27,7 @@ int main()
 	Editor* editor		= new Editor(window_name);
 
 	const Uint32 milliseconds_per_seconds	= 1000;
-	const Uint8 frames_per_second			= Configuration::getInstance()->get_refresh_rate();
+	const Uint32 frames_per_second			= Configuration::getInstance()->get_refresh_rate();
 	const Uint32 frame_time_ms				= milliseconds_per_seconds / frames_per_second;
 	
 

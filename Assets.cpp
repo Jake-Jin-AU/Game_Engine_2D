@@ -29,6 +29,12 @@ Assets::Assets(SDL_Renderer* renderer)
         _assets[sound->get_id()] = sound;
     }
 
+    // Create map tile texture
+    {
+        Texture* texture = new Texture("Texture.Map.Tile", "Assets/textures/tile.png", renderer);
+        _assets[texture->get_id()] = texture;
+    }
+
     //
     {
         Texture* texture = new Texture("Texture.Dino", "Assets/textures/dino.png", renderer);

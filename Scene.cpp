@@ -5,8 +5,8 @@ Scene::Scene(const std::string& id)
 	: _global_translation(0.f, 0.f)
 {
 	// Temporary values
-	_global_coordinate_width	= 2000;
-	_global_coordinate_height	= 2000;
+	_scene_width	= 800;
+	_scene_height	= 600;
 	
 	//
 	_id = id;

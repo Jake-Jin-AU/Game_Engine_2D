@@ -89,37 +89,26 @@ void Game_Object::simulate_physics(const Uint32& milliseconds_to_simulate, Asset
 
 void Game_Object::render(const Uint32&, Assets* assets, SDL_Renderer* renderer, Scene* scene)
 {
+    /*SDL_Rect destination;
+    destination.x = (int)_translation.get_x() - (int)scene->get_camera()->get_camera_translation().get_x();
+    destination.y = (int)_translation.get_y() - (int)scene->get_camera()->get_camera_translation().get_y();
+    destination.w = _width;
+    destination.h = _height;*/
+
     if (scene->get_camera() == nullptr)
     {
         std::cout << "Failed to load a camera" << std::endl;
         exit(1);
     }
- 
-    scene->get_camera()->get_camera_translation().get_x();
-    scene->get_camera()->get_camera_translation().get_y();
 
     SDL_Rect destination;
-    
-    //std::cout << "player" << std::endl;
-    int camera_x = (int)scene->get_camera()->get_camera_translation().get_x();
     int camera_y = (int)scene->get_camera()->get_camera_translation().get_y();
-    int x = (int)_translation.get_x();
     int y = (int)_translation.get_y();
-    int gap_x = (int)abs(camera_x - x);
     int gap_y = (int)abs(camera_y - y);
-    int camera_width = scene->get_camera()->get_width();
     int camera_height = scene->get_camera()->get_height();
+
     if (_id == "Player")
     {
-        if (gap_x < (camera_width / 2.f))
-        {
-            destination.x = (int)(camera_width / 2.f) - gap_x;
-        }
-        else
-        {
-            destination.x = (int)_translation.get_x() - (int)scene->get_camera()->get_camera_translation().get_x();
-            scene->get_camera()->set_camera_x((float)x);
-        }
         if (gap_y < (camera_height / 2.f))
         {
             destination.y = (int)(camera_height / 2.f) + (int)(gap_y / 2.f);
@@ -129,29 +118,17 @@ void Game_Object::render(const Uint32&, Assets* assets, SDL_Renderer* renderer, 
             destination.y = (int)_translation.get_y() - (int)scene->get_camera()->get_camera_translation().get_y();
             scene->get_camera()->set_camera_y((float)(y - scene->get_camera()->get_height() / 2.f));
         }
-        
     }
     else
     {
-        if (gap_x < scene->get_camera()->get_width())
-        {
-            destination.x = x - (int)scene->get_camera()->get_camera_translation().get_x();
-        }
         if (gap_y < scene->get_camera()->get_height())
         {
             destination.y = y - (int)scene->get_camera()->get_camera_translation().get_y();
         }
     }
+    destination.x = (int)_translation.get_x();
     destination.w = _width;
     destination.h = _height;
-
-
-
-    /*SDL_Rect destination;
-    destination.x = (int)_translation.get_x() - (int)scene->get_camera()->get_camera_translation().get_x();
-    destination.y = (int)_translation.get_y() - (int)scene->get_camera()->get_camera_translation().get_y();
-    destination.w = _width;
-    destination.h = _height;*/
 
     const float PI = 3.14159265f;
     if (_velocity.calculate_magnitude() > 0)

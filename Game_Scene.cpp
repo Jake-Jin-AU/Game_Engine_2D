@@ -8,10 +8,13 @@ Game_Scene::Game_Scene()
 {
 	// Camera
 	{
+		_scene_width	= 800;
+		_scene_height	= 1200;
+
 		Camera* camera = new Camera("Player");
 		_camera = camera;
 
-		_camera->set_camera_translation(Vector_2D(_camera->get_width() / 2.f, _global_coordinate_height - (_camera->get_height() / 2.f)));
+		_camera->set_camera_translation(Vector_2D(_camera->get_width() / 2.f, _scene_height - (_camera->get_height() / 2.f)));
 	}
 
 	// Game Objects

@@ -31,8 +31,8 @@ protected:
 	Camera*								_camera;
 	std::map<std::string, Game_Object*>	_game_objects;
 	std::string							_id;
-	int									_global_coordinate_width;
-	int									_global_coordinate_height;
+	int									_scene_width;
+	int									_scene_height;
 	Vector_2D							_global_translation;
 };
 

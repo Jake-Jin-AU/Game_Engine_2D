@@ -52,7 +52,7 @@ This game was inspired by my friends, spiders who live in my car, especially in 
 #### 4. UML Class Diagram (updated on 17/04/2021)
 ![UML Class Diagram](https://github.com/Jake-Jin-AU/Game_Engine_2D/blob/main/Documents/class_diagram.jpg)
 
-#### 5. Milestone (updated on 18/04/2021)
+#### 5. Milestone (updated on 05/05/2021)
 | Task | Start | End | Progress(%) |
 | --- | --- | --- | :---: |
 | Preparation |

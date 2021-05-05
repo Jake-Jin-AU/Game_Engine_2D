@@ -62,16 +62,16 @@ This game was inspired by my friends, spiders who live in my car, especially in 
 | - Design game engine with UML Class Diagram | | 18/04/2021 | 90 |
 | - Build initial game engine | | 18/04/2021 | 90 |
 | Development - Objects |
-| - Collect game resources | 19/04/2021 | 20/04/2021 | |
-| - Design game maps | 20/04/2021 | 20/04/2021 | |
-| - Construct game maps | 21/04/2021 | 21/04/2021 | |
-| - Construct game objects | 22/04/2021 | 22/04/2022 | |
-| - Deploy game objects | 23/04/2021 | 23/04/2021 | |
+| - Collect game resources | 19/04/2021 | 20/04/2021 | 90 |
+| - Design game maps | 20/04/2021 | 20/04/2021 | 50 |
+| - Construct game maps | 21/04/2021 | 21/04/2021 | 50 |
+| - Construct game objects | 22/04/2021 | 22/04/2022 | 50 |
+| - Deploy game objects | 23/04/2021 | 23/04/2021 | 50 |
 | Development - Physics |
-| - Develop physical movement - gravity | 24/04/2021 | 24/04/2021 | |
+| - Develop physical movement - gravity | 24/04/2021 | 24/04/2021 | 90 |
 | - Develop physical movement - single pendulum | 24/04/2021 | 25/04/2021 | |
 | Development - Animation |
-| - Animate framed textures | 24/04/2021 | 25/04/2021 | |
+| - Animate framed textures | 24/04/2021 | 25/04/2021 | 90 |
 | - Animate textures using physics | 24/04/2021 | 25/04/2021 | |
 | Test & Update | 26/04/2021 | | |
 
@@ -82,6 +82,14 @@ This game was inspired by my friends, spiders who live in my car, especially in 
 
 ---
 ### Updates
+date: 05/05/2021\
+title: several features updated!\
+description:\
+- Rect. collider for obstacles (ground and wall)
+- Gravity
+- Camera updated, but hidden
+- Jumping
+
 date: 18/04/2021\
 title: camera updated\
 description: now some issues to fit the perspective

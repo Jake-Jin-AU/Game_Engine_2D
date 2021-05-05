@@ -64,6 +64,7 @@ IDR_MENU1 MENU
 BEGIN
     POPUP "File"
     BEGIN
+        MENUITEM "Pause",                       ID_FILE_PAUSE
         MENUITEM "Exit",                        ID_FILE_EXIT
     END
     POPUP "Game Objects"

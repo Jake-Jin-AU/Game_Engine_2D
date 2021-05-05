@@ -10,6 +10,7 @@
 #include "Vector_2D.h"
 #include "Text.h"
 #include "Circle_2D.h"
+#include "Rect_2D.h"
 #include "Scene.h"
 
 enum class Layer
@@ -29,8 +30,16 @@ enum class Layer
 class Game_Object
 {
 public:
-	Game_Object(const std::string& id, const std::string& texture_id, const Layer layer);
+	Game_Object(const std::string& id, const std::string& texture_id, const Vector_2D& pos, const Layer layer);
 	~Game_Object();
+
+	enum class Position
+	{
+		LEFT_TOP		= 0,
+		RIGHT_TOP		= 1,
+		RIGHT_BOTTOM	= 2,
+		LEFT_BOTTOM		= 3
+	};
 
 	// Get
 	const std::string& get_id() const;
@@ -39,7 +48,7 @@ public:
 	
 	const float& get_scale() const;
 	const Vector_2D& get_translation() const;
-	const Circle_2D& get_collider() const;
+	const Circle_2D* get_collider() const;
 
 	// Set
 	void set_scale(const float& scalar);
@@ -58,16 +67,20 @@ protected:
 
 	/*Transform* transform;
 	Collier* collier;*/
-	Vector_2D _translation;
-	Vector_2D _velocity;
-	Circle_2D _collider;
+	Vector_2D	_translation;
+	Vector_2D	_velocity;
+	const Circle_2D*	_circle_collider;
+	const Rect_2D*	_rect_collider;
 
+	Position pos;
 	int		_width;
 	int		_height;
 	float	_scale;
 
 	SDL_RendererFlip _flip;
 
+	bool _is_affected_by_gravity;
+	bool _is_ground;
 private:
 };
 

@@ -9,32 +9,32 @@
 Engine::Engine()
 {
     // Initialise SDL
-    Configuration::getInstance()->assertEX(SDL_Init(SDL_INIT_EVERYTHING),
+    Configuration::get_instance()->assertEX(SDL_Init(SDL_INIT_EVERYTHING),
         0,
         "Initialize SDL");
     
     // Create a window
-    _window = SDL_CreateWindow(Configuration::getInstance()->get_window_name().c_str(),
-        Configuration::getInstance()->get_window_position_x(),
-        Configuration::getInstance()->get_window_position_y(),
-        Configuration::getInstance()->get_resolution_width(),
-        Configuration::getInstance()->get_resolution_height(),
+    _window = SDL_CreateWindow(Configuration::get_instance()->get_window_name().c_str(),
+        Configuration::get_instance()->get_window_position_x(),
+        Configuration::get_instance()->get_window_position_y(),
+        Configuration::get_instance()->get_resolution_width(),
+        Configuration::get_instance()->get_resolution_height(),
         0);
-    Configuration::getInstance()->assertEX(_window,
+    Configuration::get_instance()->assertEX(_window,
         "Create SDL window");
 
     // Create a renderer
     _renderer = SDL_CreateRenderer(_window, -1, 0);
-    Configuration::getInstance()->assertEX(_renderer,
+    Configuration::get_instance()->assertEX(_renderer,
         "Create a renderer");
 
     // Initialise SDL_image
-    Configuration::getInstance()->assertEX(IMG_Init(IMG_INIT_PNG),
+    Configuration::get_instance()->assertEX(IMG_Init(IMG_INIT_PNG),
         IMG_INIT_PNG,
         "Initialise SDL image");
 
     // Initialise SDL_TTF
-    Configuration::getInstance()->assertEX(TTF_Init(), 0, "Initialise SDL TTF");
+    Configuration::get_instance()->assertEX(TTF_Init(), 0, "Initialise SDL TTF");
 
     // Initialise Mixer
     const int mixer_init_result = Mix_Init(MIX_INIT_MOD);
@@ -101,7 +101,7 @@ void Engine::simulate_physics(const Uint32& milliseconds_to_simulate, Assets* as
 void Engine::render(const Uint32& milliseconds_to_simulate, Assets* assets, Scene* scene) const
 {
     // Clear a render
-    Configuration::getInstance()->assertEX(SDL_RenderClear(_renderer),
+    Configuration::get_instance()->assertEX(SDL_RenderClear(_renderer),
         0,
         "Clear a render");
 
@@ -110,7 +110,7 @@ void Engine::render(const Uint32& milliseconds_to_simulate, Assets* assets, Scen
     const Uint8 green   = 128;
     const Uint8 blue    = 128;
     const Uint8 alpha   = 0;
-    Configuration::getInstance()->assertEX(SDL_SetRenderDrawColor(_renderer, red, green, blue, alpha),
+    Configuration::get_instance()->assertEX(SDL_SetRenderDrawColor(_renderer, red, green, blue, alpha),
         0,
         "Set a render draw color");
 

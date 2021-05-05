@@ -4,13 +4,13 @@ Text::Text(SDL_Renderer* renderer, const char* text, const SDL_Color& color, con
 	: Asset(id)
 {
 	TTF_Font* font = TTF_OpenFont("Assets/Text/jokerman.ttf", 15);
-	Configuration::getInstance()->assertEX(font, "Load font");
+	Configuration::get_instance()->assertEX(font, "Load font");
 
 	SDL_Surface* surface = TTF_RenderText_Solid(font, text, color);
-	Configuration::getInstance()->assertEX(surface, "Surface from font");
+	Configuration::get_instance()->assertEX(surface, "Surface from font");
 
 	_text = SDL_CreateTextureFromSurface(renderer, surface);
-	Configuration::getInstance()->assertEX(_text, "Create texture from surface");
+	Configuration::get_instance()->assertEX(_text, "Create texture from surface");
 
 	SDL_FreeSurface(surface);
 }

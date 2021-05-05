@@ -29,9 +29,20 @@ Assets::Assets(SDL_Renderer* renderer)
         _assets[sound->get_id()] = sound;
     }
 
+    // Create running effect sound
+    {
+        Sound* sound = new Sound("Sound.Effect.Jumping", "Assets/Sounds/jumping.wav");
+        _assets[sound->get_id()] = sound;
+    }
+
     // Create map tile texture
     {
-        Texture* texture = new Texture("Texture.Map.Tile", "Assets/textures/tile.png", renderer);
+        const int frame_count = 9;
+        const int frame_no = 0;
+        Tile_Texture* texture = new Tile_Texture("Texture.Map.Tile",
+            "Assets/textures/tile.png",
+            renderer,
+            frame_count);
         _assets[texture->get_id()] = texture;
     }
 

@@ -153,6 +153,7 @@
     <ClCompile Include="Asset.cpp" />
     <ClCompile Include="Assets.cpp" />
     <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="Rect_2D.cpp" />
     <ClCompile Include="Sound.cpp" />
     <ClCompile Include="Circle_2D.cpp" />
     <ClCompile Include="Collider.cpp" />
@@ -170,6 +171,8 @@
     <ClCompile Include="Sound_Effect.cpp" />
     <ClCompile Include="Text.cpp" />
     <ClCompile Include="Texture.cpp" />
+    <ClCompile Include="Tile.cpp" />
+    <ClCompile Include="Tile_Texture.cpp" />
     <ClCompile Include="Vector_2D.cpp" />
     <ClCompile Include="Walking_Dino.cpp" />
   </ItemGroup>
@@ -178,6 +181,7 @@
     <ClInclude Include="Asset.h" />
     <ClInclude Include="Assets.h" />
     <ClInclude Include="Camera.h" />
+    <ClInclude Include="Rect_2D.h" />
     <ClInclude Include="Sound.h" />
     <ClInclude Include="Circle_2D.h" />
     <ClInclude Include="Collider.h" />
@@ -195,6 +199,8 @@
     <ClInclude Include="Sound_Effect.h" />
     <ClInclude Include="Text.h" />
     <ClInclude Include="Texture.h" />
+    <ClInclude Include="Tile.h" />
+    <ClInclude Include="Tile_Texture.h" />
     <ClInclude Include="Vector_2D.h" />
     <ClInclude Include="Walking_Dino.h" />
   </ItemGroup>

@@ -9,7 +9,7 @@
 class Configuration
 {
 public:
-	static Configuration* getInstance();
+	static Configuration* get_instance();
 
 	// Assert
 	void assertEX(const int& result, const int& success, const char* error_msg) const;
@@ -33,6 +33,7 @@ public:
 	bool _should_display_ids			= false;
 	bool _should_display_positions		= false;
 	bool _should_display_colliders		= false;
+	bool _should_pause					= false;
 
 private:
 	Configuration();

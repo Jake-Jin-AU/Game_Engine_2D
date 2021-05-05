@@ -4,6 +4,7 @@
 
 #include "Texture.h"
 #include "Animated_Texture.h"
+#include "Tile_Texture.h"
 #include "Asset.h"
 #include "Sound.h"
 

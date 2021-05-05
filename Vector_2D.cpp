@@ -28,6 +28,12 @@ void Vector_2D::operator+=(const Vector_2D& rhs)
     _y += rhs._y;
 }
 
+void Vector_2D::operator-=(const Vector_2D& rhs)
+{
+    _x -= rhs._x;
+    _y -= rhs._y;
+}
+
 Vector_2D Vector_2D::operator-(const Vector_2D& rhs)
 {
     return Vector_2D(_x - rhs._x, _y - rhs._y);

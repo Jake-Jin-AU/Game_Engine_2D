@@ -19,7 +19,7 @@ int String_to_WString(std::wstring& ws, const std::string& s)
 int main()
 {
 	std::wstring window_name = L"";
-	String_to_WString(window_name, Configuration::getInstance()->get_window_name());
+	String_to_WString(window_name, Configuration::get_instance()->get_window_name());
 	Engine* engine		= new Engine();
 	Assets* assets		= new Assets(engine->get_renderer());
 	Scene* game_scene	= new Game_Scene();
@@ -27,7 +27,7 @@ int main()
 	Editor* editor		= new Editor(window_name);
 
 	const Uint32 milliseconds_per_seconds	= 1000;
-	const Uint32 frames_per_second			= Configuration::getInstance()->get_refresh_rate();
+	const Uint32 frames_per_second			= Configuration::get_instance()->get_refresh_rate();
 	const Uint32 frame_time_ms				= milliseconds_per_seconds / frames_per_second;
 	
 
@@ -41,7 +41,11 @@ int main()
 		game_scene->update(engine->get_window());
 		input->load_input();
 		editor->update(input, game_scene);
-		engine->simulate(previous_frame_duration, assets, game_scene, input);
+
+		if (!Configuration::get_instance()->_should_pause)
+		{
+			engine->simulate(previous_frame_duration, assets, game_scene, input);
+		}
 
 		if (input->is_button_state(Input::Button::UP, Input::Button_State::PRESSED))
 		{

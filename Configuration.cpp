@@ -77,7 +77,7 @@ Configuration::~Configuration()
 {
 }
 
-Configuration* Configuration::getInstance()
+Configuration* Configuration::get_instance()
 {
     if (_instance == nullptr)
     {

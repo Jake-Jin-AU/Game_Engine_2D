@@ -52,31 +52,31 @@ INT_PTR CALLBACK Dialog_Configuration_Proc(HWND hWnd, UINT message, WPARAM wPara
 		
 		// Update dialog items
 		{
-			std::string tmp = Configuration::getInstance()->get_title();
+			std::string tmp = Configuration::get_instance()->get_title();
 			::SetDlgItemTextA(hWnd, IDC_EDIT_TITLE, tmp.c_str());
 		}
 		{
-			std::string tmp = Configuration::getInstance()->get_version();
+			std::string tmp = Configuration::get_instance()->get_version();
 			::SetDlgItemTextA(hWnd, IDC_EDIT_VERSION, tmp.c_str());
 		}
 		{
-			std::string tmp = std::to_string(Configuration::getInstance()->get_window_position_x());
+			std::string tmp = std::to_string(Configuration::get_instance()->get_window_position_x());
 			::SetDlgItemTextA(hWnd, IDC_EDIT_WIN_POS_X, tmp.c_str());
 		}
 		{
-			std::string tmp = std::to_string(Configuration::getInstance()->get_window_position_y());
+			std::string tmp = std::to_string(Configuration::get_instance()->get_window_position_y());
 			::SetDlgItemTextA(hWnd, IDC_EDIT_WIN_POS_Y, tmp.c_str());
 		}
 		{
-			std::string tmp = std::to_string(Configuration::getInstance()->get_resolution_width());
+			std::string tmp = std::to_string(Configuration::get_instance()->get_resolution_width());
 			::SetDlgItemTextA(hWnd, IDC_EDIT_RESOLUTION_W, tmp.c_str());
 		}
 		{
-			std::string tmp = std::to_string(Configuration::getInstance()->get_resolution_height());
+			std::string tmp = std::to_string(Configuration::get_instance()->get_resolution_height());
 			::SetDlgItemTextA(hWnd, IDC_EDIT_RESOLUTION_H, tmp.c_str());
 		}
 		{
-			std::string tmp = std::to_string(Configuration::getInstance()->get_refresh_rate());
+			std::string tmp = std::to_string(Configuration::get_instance()->get_refresh_rate());
 			::SetDlgItemTextA(hWnd, IDC_EDIT_REFRESH_RATE, tmp.c_str());
 		}
 
@@ -106,6 +106,11 @@ INT_PTR CALLBACK Dialog_Configuration_Proc(HWND hWnd, UINT message, WPARAM wPara
 
 void Editor::update(Input* input, Scene*)
 {
+	if (input->is_button_state(Input::Button::FILE_PAUSE, Input::Button_State::PRESSED))
+	{
+		Configuration::get_instance()->_should_pause = !Configuration::get_instance()->_should_pause;
+	}
+
 	if (input->is_button_state(Input::Button::DIALOG_CONFIGURATION, Input::Button_State::PRESSED))
 	{
 		DialogBox(GetModuleHandle(0), MAKEINTRESOURCE(IDD_DIALOG_CONFIGURATION), _window, Dialog_Configuration_Proc);
@@ -113,16 +118,16 @@ void Editor::update(Input* input, Scene*)
 
 	if (input->is_button_state(Input::Button::DISPLAY_GAME_OBJECTS_ID, Input::Button_State::PRESSED))
 	{
-		Configuration::getInstance()->_should_display_ids = !Configuration::getInstance()->_should_display_ids;
+		Configuration::get_instance()->_should_display_ids = !Configuration::get_instance()->_should_display_ids;
 	}
 
 	if (input->is_button_state(Input::Button::DISPLAY_GAME_OBJECTS_POSITION, Input::Button_State::PRESSED))
 	{
-		Configuration::getInstance()->_should_display_positions = !Configuration::getInstance()->_should_display_positions;
+		Configuration::get_instance()->_should_display_positions = !Configuration::get_instance()->_should_display_positions;
 	}
 
 	if (input->is_button_state(Input::Button::DISPLAY_COLLIDERS, Input::Button_State::PRESSED))
 	{
-		Configuration::getInstance()->_should_display_colliders = !Configuration::getInstance()->_should_display_colliders;
+		Configuration::get_instance()->_should_display_colliders = !Configuration::get_instance()->_should_display_colliders;
 	}
 }

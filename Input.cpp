@@ -11,11 +11,12 @@ Input::~Input()
 
 void Input::load_input()
 {
-	_button_state[Button::DIALOG_CONFIGURATION] = Button_State::UP;
-	_button_state[Button::DISPLAY_GAME_OBJECTS_ID] = Button_State::UP;
-	_button_state[Button::DISPLAY_GAME_OBJECTS_POSITION] = Button_State::UP;
-	_button_state[Button::DISPLAY_COLLIDERS] = Button_State::UP;
-	
+	_button_state[Button::DIALOG_CONFIGURATION]				= Button_State::UP;
+	_button_state[Button::DISPLAY_GAME_OBJECTS_ID]			= Button_State::UP;
+	_button_state[Button::DISPLAY_GAME_OBJECTS_POSITION]	= Button_State::UP;
+	_button_state[Button::DISPLAY_COLLIDERS]				= Button_State::UP;
+	_button_state[Button::FILE_PAUSE]						= Button_State::UP;
+
 	for (auto button_state : _button_state)
 	{
 		if (button_state.second == Button_State::PRESSED)
@@ -43,6 +44,10 @@ void Input::load_input()
 			if (event.syswm.msg->msg.win.wParam == ID_FILE_EXIT)
 			{
 				_button_state[Button::QUIT] = Button_State::PRESSED;
+			}
+			else if (event.syswm.msg->msg.win.wParam == ID_FILE_PAUSE)
+			{
+				_button_state[Button::FILE_PAUSE] = Button_State::PRESSED;
 			}
 			else if (event.syswm.msg->msg.win.wParam == ID_SETTINGS_CONFIGURATION)
 			{
@@ -100,6 +105,13 @@ void Input::load_input()
 					_button_state[Button::RUNNING] = Button_State::PRESSED;
 				}
 				break;
+
+			case SDL_SCANCODE_SPACE:
+				if (!is_button_state(Button::JUMPING, Button_State::DOWN))
+				{
+					_button_state[Button::JUMPING] = Button_State::PRESSED;
+				}
+				break;
 			}
 			break;
 
@@ -124,6 +136,9 @@ void Input::load_input()
 
 			case SDL_SCANCODE_LSHIFT:
 				_button_state[Button::RUNNING] = Button_State::RELEASED;
+				break;
+			case SDL_SCANCODE_SPACE:
+				_button_state[Button::JUMPING] = Button_State::RELEASED;
 				break;
 			}
 			break;

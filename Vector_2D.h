@@ -11,6 +11,7 @@ public:
 	
 	void operator=(const Vector_2D& rhs);
 	void operator+=(const Vector_2D& rhs);
+	void operator-=(const Vector_2D& rhs);
 
 	Vector_2D operator-(const Vector_2D& rhs);
 	Vector_2D operator+(const Vector_2D& rhs);

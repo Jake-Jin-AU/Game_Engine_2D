@@ -58,3 +58,13 @@ void Scene::set_global_translation(const Vector_2D& global_translation)
 {
 	_global_translation = global_translation;
 }
+
+void Scene::add_game_object(Game_Object* game_object)
+{
+	_game_objects[game_object->get_id()] = game_object;
+}
+
+void Scene::remove_game_object(std::string id)
+{
+	_game_objects.erase(id);
+}

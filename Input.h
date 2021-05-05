@@ -21,6 +21,7 @@ public:
 		DISPLAY_GAME_OBJECTS_POSITION,
 		DISPLAY_COLLIDERS,
 
+		FILE_PAUSE,
 
 		// Key
 		UP,
@@ -29,7 +30,8 @@ public:
 		RIGHT,
 
 		// Action
-		RUNNING
+		RUNNING,
+		JUMPING
 	};
 
 	enum class Button_State

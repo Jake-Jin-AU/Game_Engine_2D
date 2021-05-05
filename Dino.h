@@ -6,7 +6,7 @@
 class Dino : public Game_Object
 {
 public:
-	Dino(const std::string& id);
+	Dino(const std::string& id, const Vector_2D& pos);
 	~Dino();
 
 	// Inherited via Game_Object

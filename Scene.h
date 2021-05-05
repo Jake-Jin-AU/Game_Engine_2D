@@ -7,7 +7,6 @@
 #include <SDL.h>
 
 #include "Camera.h"
-
 class Game_Object;
 
 class Scene
@@ -26,6 +25,9 @@ public:
 	const Vector_2D& get_global_translation();
 
 	void set_global_translation(const Vector_2D& global_translation);
+
+	void add_game_object(Game_Object* game_object);
+	void remove_game_object(std::string id);
 
 protected:
 	Camera*								_camera;

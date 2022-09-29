@@ -2,7 +2,6 @@
 ---
 ### Overview
 This project is for basic game engine development algorithm.
-- Engine name: Lear Engine
 - Version: 1.0.0a (updated on 18/04/2021)
 
 #### 1. Engine system
